@@ -1,6 +1,14 @@
+const listCategories = document.querySelectorAll(".item");
 function categoryCounter() {
-    const listCategories = document.querySelectorAll(".item");
-    const categoriesCount = [listCategories];
-    return categoriesCount;
+    return listCategories.length;
 }
-console.log(categoryCounter());
+console.log("Number of categories:", categoryCounter());
+listCategories.forEach((category) => {
+    console.log(
+        "Category:",
+        category.firstElementChild.textContent,
+        "",
+        "Elements:",
+        category.lastElementChild.children.length
+    );
+});
